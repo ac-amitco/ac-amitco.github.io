@@ -11,10 +11,10 @@ export default function Experience() {
         <div className="timeline">
           {experience.map((item) => (
             <article className="timeline-item" key={`${item.company}-${item.period}`}>
-              <p className="timeline-period">{item.period}</p>
+              {item.period && <p className="timeline-period">{item.period}</p>}
               <h3 className="timeline-role">{item.role}</h3>
               <p className="timeline-company">{item.company}</p>
-              <p className="timeline-desc">{item.description}</p>
+              {item.description && <p className="timeline-desc">{item.description}</p>}
               {item.tech.length > 0 && (
                 <ul className="tech-list">
                   {item.tech.map((tech) => (

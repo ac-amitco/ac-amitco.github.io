@@ -10,15 +10,19 @@ export default function About() {
         <h2 className="section-title">About Me</h2>
         <div className="about-grid">
           <p className="about-bio">{about.bio}</p>
-          <div>
-            <p className="skills-title">Skills</p>
-            <ul className="skills">
-              {about.skills.map((skill) => (
-                <li className="skill-chip" key={skill}>
-                  {skill}
-                </li>
-              ))}
-            </ul>
+          <div className="skill-groups">
+            {about.skillGroups.map((group) => (
+              <div className="skill-group" key={group.title}>
+                <p className="skills-title">{group.title}</p>
+                <ul className="skills">
+                  {group.items.map((skill) => (
+                    <li className="skill-chip" key={skill}>
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>

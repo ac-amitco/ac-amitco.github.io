@@ -12,45 +12,79 @@ export const site = {
 }
 
 export const about = {
-  // Replace with your real bio (2–4 sentences works best)
-  bio: `Hi! I’m a software engineer passionate about building useful things and
-learning in public. This site is home to my experience and the projects
-I’m working on. Placeholder bio — swap me for the real story.`,
-  skills: [
-    'JavaScript',
-    'TypeScript',
-    'React',
-    'Node.js',
-    'Python',
-    'Git',
-    'SQL',
-    'REST APIs',
+  bio: `I’m a software engineer with 3+ years of experience across software
+development and data analysis. I’ve led AI/ML-driven initiatives and
+architected high-throughput backend systems, and I’m passionate about
+solving complex problems at scale — and about making developers faster
+through robust internal tooling. I bring strong technical skills, an
+innovative mindset, and a lot of creativity to everything I build.`,
+  skillGroups: [
+    {
+      title: 'Backend',
+      items: ['Python', 'Java', 'Node.js', 'C', 'SQL'],
+    },
+    {
+      title: 'Frontend',
+      items: ['JavaScript', 'TypeScript', 'React', 'HTML', 'CSS'],
+    },
+    {
+      title: 'Tools & Infrastructure',
+      items: ['Git', 'Docker', 'Kubernetes', 'AWS', 'Linux', 'MongoDB', 'CI/CD'],
+    },
+    {
+      title: 'Concepts',
+      items: ['Distributed Systems', 'Microservices', 'REST APIs'],
+    },
+    {
+      title: 'AI & Workflow',
+      items: [
+        'AI-Augmented Development (Cursor, Claude Code)',
+        'AI Adoption Strategy',
+        'Internal Tooling',
+        'Quantitative Research',
+      ],
+    },
   ],
 }
 
 export const experience = [
   {
-    company: 'Placeholder Company',
+    company: 'Intuit',
     role: 'Software Engineer',
-    period: '2024 — Present',
+    period: 'Feb 2025 — Present',
     description:
-      'Placeholder description. Summarize what you build, the impact you had, and the technologies you used.',
-    tech: ['React', 'Node.js', 'PostgreSQL'],
+      'Building and scaling production backend systems, with a focus on AI-driven initiatives and internal tooling that improves developer velocity.',
+    tech: ['Python', 'AWS', 'Distributed Systems'],
   },
   {
-    company: 'Another Company Ltd.',
-    role: 'Junior Developer',
-    period: '2022 — 2024',
+    company: 'Alice Code — leadership and technology for girls and young women',
+    role: 'Mentor (Volunteer)',
+    period: '2023 — Present',
     description:
-      'Placeholder description. A sentence or two about your responsibilities and biggest wins in this role.',
-    tech: ['Python', 'Docker'],
+      'Teaching computer science students and mentoring them through their first steps as programmers.',
+    tech: [],
   },
   {
-    company: 'The University of Somewhere',
+    company: 'Self-employed',
+    role: 'Python Tutor',
+    period: '2021 — 2024',
+    description:
+      'Taught Python programming privately, guiding students from the basics to writing real projects.',
+    tech: ['Python'],
+  },
+  {
+    company: 'Localbird',
+    role: 'Growth Data Analyst',
+    period: '2022 — 2023',
+    description:
+      'Drove growth decisions through quantitative research and business analytics.',
+    tech: ['SQL', 'Python'],
+  },
+  {
+    company: 'Reichman University',
     role: 'B.Sc. Computer Science',
-    period: '2019 — 2022',
-    description:
-      'Placeholder education entry. Mention specializations, honors, or notable coursework.',
+    period: '',
+    description: '',
     tech: [],
   },
 ]
@@ -88,5 +122,5 @@ export const projects = [
 
 export const socials = {
   github: 'https://github.com/ac-amitco',
-  linkedin: 'https://www.linkedin.com/in/your-profile-here', // ← update me
+  linkedin: 'https://www.linkedin.com/in/amit-bar-cohen-b80aba23a/',
 }
