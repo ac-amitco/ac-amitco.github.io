@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import photo from '../assets/me.jpeg'
+import photo from '../assets/me-cutout.png'
 
 // Brightness ramp, darkest → brightest
 const RAMP = ' .,:-=+*#%@'
@@ -27,17 +27,14 @@ export default function AsciiPortrait() {
       for (let y = 0; y < rows; y++) {
         for (let x = 0; x < COLS; x++) {
           const i = (y * COLS + x) * 4
-          const [r, g, b] = [data[i], data[i + 1], data[i + 2]]
-          // Green-hued pixels with real saturation are the foliage backdrop —
-          // flatten them into a sparse dot grid so the subject stands out.
-          // (Skin/hair are red-dominant, the shirt is near-gray, so they stay.)
-          const mx = Math.max(r, g, b)
-          const sat = (mx - Math.min(r, g, b)) / (mx || 1)
-          if (g === mx && sat > 0.12) {
+          // The photo is a cutout with a transparent background —
+          // render the background as a sparse dot grid.
+          if (data[i + 3] < 100) {
             out += x % 2 === 0 && y % 2 === 0 ? '.' : ' '
             continue
           }
-          let lum = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255
+          let lum =
+            (0.2126 * data[i] + 0.7152 * data[i + 1] + 0.0722 * data[i + 2]) / 255
           lum = Math.min(1, Math.max(0, (lum - 0.18) / 0.72))
           out += RAMP[Math.min(RAMP.length - 1, Math.floor(lum * RAMP.length))]
         }
