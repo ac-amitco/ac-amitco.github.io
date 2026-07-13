@@ -127,11 +127,48 @@ img {
   color: var(--accent);
 }
 
+/* Hamburger button (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: var(--accent);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* ===== Hero ===== */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  /* Keep content clear of the fixed navbar when it overflows the viewport */
+  padding: 96px 0 48px;
   background:
     radial-gradient(ellipse 60% 45% at 70% 20%, var(--accent-soft), transparent),
     var(--bg);
@@ -159,7 +196,8 @@ img {
 
 .ascii-portrait pre {
   font-family: var(--mono);
-  font-size: 6.5px;
+  /* Shrink with the viewport so 96 columns never overflow small phones */
+  font-size: min(6.5px, calc((100vw - 48px) / 57.6));
   line-height: 0.9;
   color: var(--accent);
   opacity: 0.85;
@@ -520,8 +558,32 @@ img {
 
 /* ===== Responsive ===== */
 @media (max-width: 720px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Dropdown panel under the navbar, toggled by the hamburger */
   .navbar-links {
-    display: none; /* hero anchors + scrolling cover navigation on mobile */
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 0;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-links a {
+    display: block;
+    padding: 14px 24px;
+    font-size: 1rem;
   }
 
   .section {

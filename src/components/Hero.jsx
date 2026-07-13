@@ -1,5 +1,6 @@
 import { site } from '../data/content.js'
 import AsciiPortrait from './AsciiPortrait.jsx'
+import scrollToHash from '../utils/scroll.js'
 
 export default function Hero() {
   return (
@@ -16,10 +17,10 @@ export default function Hero() {
           </h2>
           <p>{site.tagline}</p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href="#projects">
+            <a className="btn btn-primary" href="#projects" onClick={scrollToHash}>
               See my projects
             </a>
-            <a className="btn btn-ghost" href="#contact">
+            <a className="btn btn-ghost" href="#contact" onClick={scrollToHash}>
               Get in touch
             </a>
           </div>
