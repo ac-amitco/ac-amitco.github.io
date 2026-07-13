@@ -8,7 +8,12 @@ export default function Hero() {
         <div className="hero-text">
           <p className="hero-kicker">Hi, my name is</p>
           <h1>{site.name}.</h1>
-          <h2>{site.role}</h2>
+          <h2>
+            {site.role}
+            <span className="cursor" aria-hidden="true">
+              |
+            </span>
+          </h2>
           <p>{site.tagline}</p>
           <div className="hero-actions">
             <a className="btn btn-primary" href="#projects">

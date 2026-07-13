@@ -6,7 +6,8 @@
 export const site = {
   name: 'Amit Bar Cohen',
   role: 'Software Engineer',
-  tagline: 'I build clean, reliable software — and I’m just getting started.',
+  tagline:
+    'Building things at the intersection of software, data, and machine learning.',
   location: 'Israel',
   email: 'ac.amitco@gmail.com',
 }
@@ -51,7 +52,7 @@ export const experience = [
   {
     company: 'Intuit',
     role: 'Software Engineer',
-    period: 'Feb 2025 — Present',
+    period: '2025 — Present',
     description:
       'Building and scaling production backend systems, with a focus on AI-driven initiatives and internal tooling that improves developer velocity.',
     tech: ['Python', 'AWS', 'Distributed Systems'],
